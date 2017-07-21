@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container-fluid">
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+      <link rel="stylesheet" href="master.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+      <script type="text/javascript">
+        var table_data = [
+                          { first_name : 'Rose',
+                           last_name  : 'Tyler',
+                           home       : 'Earth' },
+                         { first_name : 'Zoe',
+                           last_name  : 'Heriot',
+                           home       : 'Space Station W3'},
+                         { first_name : 'Jo',
+                           last_name  : 'Grant',
+                           home       : 'Earth'},
+                         { first_name : 'Leela',
+                           last_name  : null,
+                           home       : 'Unspecified'},
+                         { first_name : 'Romana',
+                           last_name  : null,
+                           home       : 'Gallifrey'},
+                         { first_name : 'Clara',
+                           last_name  : 'Oswald',
+                           home       : 'Earth'},
+                         { first_name : 'Adric',
+                           last_name  : null,
+                           home       : 'Alzarius'},
+                         { first_name : 'Susan',
+                           last_name  : 'Foreman',
+                           home       : 'Gallifrey'}
+                      ];
+
+        $( document ).ready(function() {
+          $( "#one" ).click(function() {
+          for(var i = 0; i <= table_data.length-1 ;i++){
+            console.log(i)
+            $( ".names" ).append("<tr> <td>" + table_data[i].first_name + "</td>" + "<td>" + table_data[i].last_name + "</td>" + "<td>" + table_data[i].home + "</td> </tr>");
+          }
+          console.log( "page loaded!" );
+          });
+        });
+      </script>
+      <h1>No data yet. CLick the button to add data to the table</h1>
+      <button class="btn btn-primary btn-lg" id="one">click Me!</button>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Home</th>
+          </tr>
+        </thead>
+        <tbody class="names">
+
+        </tbody>
+      </table>
+
+    </div>
+  </body>
+</html>
