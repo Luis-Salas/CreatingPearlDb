@@ -1,3 +1,24 @@
-h1{
-  margin:auto;
+body{
+  color: white !important;
+  text-align: center !important;
+}
+.table>thead>tr>th{
+  text-align: center;
+}
+
+.container-fluid{
+  margin-top:100px;
+  background-color: #36454f;
+  border-radius: 20px;
+  margin-left: 15px !important;
+  margin-right: 15px !important;
+}
+
+.table{
+  color:white;
+}
+
+.btn-primary{
+  background-color: #b30505 !important;
+  border-color: black !important;
 }
