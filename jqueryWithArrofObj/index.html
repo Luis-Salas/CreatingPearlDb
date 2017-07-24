@@ -5,95 +5,97 @@
     <title></title>
   </head>
   <body>
-    <div class="container-fluid">
+    <div id="backgound-image">
+      <div class="container-fluid">
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-      <link rel="stylesheet" href="master.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-      <script type="text/javascript">
-        var table_data = [
-                          { first_name : 'Rose',
-                           last_name  : 'Tyler',
-                           home       : 'Earth' },
-                         { first_name : 'Zoe',
-                           last_name  : 'Heriot',
-                           home       : 'Space Station W3'},
-                         { first_name : 'Jo',
-                           last_name  : 'Grant',
-                           home       : 'Earth'},
-                         { first_name : 'Leela',
-                           last_name  : null,
-                           home       : 'Unspecified'},
-                         { first_name : 'Romana',
-                           last_name  : null,
-                           home       : 'Gallifrey'},
-                         { first_name : 'Clara',
-                           last_name  : 'Oswald',
-                           home       : 'Earth'},
-                         { first_name : 'Adric',
-                           last_name  : null,
-                           home       : 'Alzarius'},
-                         { first_name : 'Susan',
-                           last_name  : 'Foreman',
-                           home       : 'Gallifrey'}
-                      ];
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+        <link rel="stylesheet" href="master.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script type="text/javascript">
+          var table_data = [
+                            { first_name : 'Rose',
+                             last_name  : 'Tyler',
+                             home       : 'Earth' },
+                           { first_name : 'Zoe',
+                             last_name  : 'Heriot',
+                             home       : 'Space Station W3'},
+                           { first_name : 'Jo',
+                             last_name  : 'Grant',
+                             home       : 'Earth'},
+                           { first_name : 'Leela',
+                             last_name  : null,
+                             home       : 'Unspecified'},
+                           { first_name : 'Romana',
+                             last_name  : null,
+                             home       : 'Gallifrey'},
+                           { first_name : 'Clara',
+                             last_name  : 'Oswald',
+                             home       : 'Earth'},
+                           { first_name : 'Adric',
+                             last_name  : null,
+                             home       : 'Alzarius'},
+                           { first_name : 'Susan',
+                             last_name  : 'Foreman',
+                             home       : 'Gallifrey'}
+                        ];
 
-        //Array of random Elemets on page
-        //only run this when the page has fully loaded
-        $( document ).ready(function() {
-          //allow only one click of the button
-          $( "#tableData" ).one("click",function() {
-            //go trough every element in object and stop when at the end
-            for(var i = 0; i <= table_data.length-1 ;i++){
-              console.log(table_data[i])
-              //finding all entried with null and replacing with string
-                if(table_data[i].last_name == null){
-                  table_data[i].last_name = "No Data Entered"
-                }
-                //append a row with data from the list above
-                $( ".names" ).append("<tr> <td>" + table_data[i].first_name + "</td>" + "<td>" + table_data[i].last_name + "</td>" + "<td>" + table_data[i].home + "</td> </tr>");
-            }
+          //Array of random Elemets on page
+          //only run this when the page has fully loaded
+          $( document ).ready(function() {
+            //allow only one click of the button
+            $( "#tableData" ).one("click",function() {
+              //go trough every element in object and stop when at the end
+              for(var i = 0; i <= table_data.length-1 ;i++){
+                console.log(table_data[i])
+                //finding all entried with null and replacing with string
+                  if(table_data[i].last_name == null){
+                    table_data[i].last_name = "No Data Entered"
+                  }
+                  //append a row with data from the list above
+                  $( ".names" ).append("<tr> <td>" + table_data[i].first_name + "</td>" + "<td>" + table_data[i].last_name + "</td>" + "<td>" + table_data[i].home + "</td> </tr>");
+              }
+            });
+            //INSERT OBJECT DATA TO CONTAINER
+            $( "#containerData" ).click(function() {
+              //go trough every element in object and stop when at the end
+              var ElementArr = ['#header', '#first_name', '#last_name']
+              var rand = ElementArr[Math.floor(Math.random() * ElementArr.length)];
+              console.log(rand)
+              console.log(ElementArr)
+              for(var i = 0; i <= table_data.length-1 ;i++){
+                // console.log(table_data[i])
+                //finding all entried with null and replacing with string
+
+                  if(table_data[i].last_name == null){
+                    table_data[i].last_name = "No Data Entered"
+                  }
+
+                  //append a row with data from the list above
+                  $(rand).append("<p> First Name: " + table_data[i].first_name + ", Last Name: " + table_data[i].last_name + ", Home: " + table_data[i].home + "</p>");
+              }
+            });
+
+
+          console.log( "page loaded!" );
           });
-          //INSERT OBJECT DATA TO CONTAINER
-          $( "#containerData" ).click(function() {
-            //go trough every element in object and stop when at the end
-            var ElementArr = ['#header', '#first_name', '#last_name']
-            var rand = ElementArr[Math.floor(Math.random() * ElementArr.length)];
-            console.log(rand)
-            console.log(ElementArr)
-            for(var i = 0; i <= table_data.length-1 ;i++){
-              // console.log(table_data[i])
-              //finding all entried with null and replacing with string
-
-                if(table_data[i].last_name == null){
-                  table_data[i].last_name = "No Data Entered"
-                }
-
-                //append a row with data from the list above
-                $(rand).append("<p> First Name: " + table_data[i].first_name + ", Last Name: " + table_data[i].last_name + ", Home: " + table_data[i].home + "</p>");
-            }
-          });
-
-
-        console.log( "page loaded!" );
-        });
-      </script>
-      <h1 id="header">No data yet. CLick the button to add data to the table</h1>
-      <!-- button with id (event listener looking for this) -->
-      <button class="btn btn-primary btn-lg" id="tableData">Add data to Table</button>
-      <button class="btn btn-primary btn-lg" id="containerData">Add data to Random Html Element</button>
-      <table class="table">
-        <thead>
-          <tr>
-            <th id="first_name">First Name</th>
-            <th id="last_name">Last Name</th>
-            <th>Home</th>
-          </tr>
-        </thead>
-        <tbody class="names">
-          <!-- appending things here  -->
-        </tbody>
-      </table>
+        </script>
+        <h1 id="header">No data yet. CLick the button to add data to the table</h1>
+        <!-- button with id (event listener looking for this) -->
+        <button class="btn btn-primary btn-lg" id="tableData">Add data to Table</button>
+        <button class="btn btn-primary btn-lg" id="containerData">Add data to Random Html Element</button>
+        <table class="table">
+          <thead>
+            <tr>
+              <th id="first_name">First Name</th>
+              <th id="last_name">Last Name</th>
+              <th>Home</th>
+            </tr>
+          </thead>
+          <tbody class="names">
+            <!-- appending things here  -->
+          </tbody>
+        </table>
+      </div>
     </div>
   </body>
 </html>

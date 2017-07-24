@@ -7,15 +7,27 @@ body{
 }
 
 .container-fluid{
-  margin-top:100px;
+  margin-top: 100px;
   background-color: #36454f;
   border-radius: 20px;
-  margin-left: 15px !important;
-  margin-right: 15px !important;
+  margin-left: 65px !important;
+  margin-right: 65px !important;
+}
+#backgound-image{
+  background-image: url("backgroundPic.jpg");
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .table{
+  margin-top: 20px;
   color:white;
+  border: 2px white solid;
+  border-radius: 40px;
 }
 
 .btn-primary{
